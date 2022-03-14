@@ -3,6 +3,11 @@
 ## Replit Link
 [Kaavya Individual Repl](https://replit.com/@KaavyaUppala/KaavyaIndividualTri3#Main.java)
 
+## Review Tickets
+Week | Ticket | Score
+-----| ------ |-------
+0    | [TT0 Challenges](https://github.com/dsblack0/stickers_for_charity/issues/9) |
+
 ## Data Structures Challenges 1-3 (Tech Talk 0)
 ### Menu
 Use of the Scanner Class to take in user input using the System.in argument
