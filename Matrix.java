@@ -10,7 +10,9 @@ public class Matrix{
 
   // Hack: create toString method using nested for loops to format output of a matrix
   public String toString(){
+    //create an String output that is changed depending on the values in the matrix
     String output = "";
+    //nested for loops to interate through the 2D array and format. If there is a -1, it is formatted as a space
     for (int row = 0; row < matrix.length; row++){
       for (int column = 0; column < matrix[row].length; column++){
         if (matrix[row][column] == -1){
@@ -41,6 +43,7 @@ public class Matrix{
   }
 
   // tester method for matrix formatting
+  //Added my toString method in the print statment
   public static void main(String[] args) {
     Matrix m0 = new Matrix(keypad());
     System.out.println("Keypad:");
