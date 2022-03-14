@@ -6,7 +6,7 @@
 ## Review Tickets
 Week | Ticket | Score
 -----| ------ |-------
-0    | [TT0 Challenges](https://github.com/dsblack0/stickers_for_charity/issues/9) |
+0    | [TT0 Individual](https://github.com/dsblack0/stickers_for_charity/issues/9), [Team Work](https://github.com/dsblack0/stickers_for_charity/issues/3) |
 
 ## Data Structures Challenges 1-3 (Tech Talk 0)
 ### Menu
