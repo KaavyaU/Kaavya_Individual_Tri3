@@ -59,6 +59,7 @@ public void swapToLowHighOrder (IntByReference b) {
 }
 ```
 Override toString method to print out the first and second ints in the correct format
+```
 //Overriding existing toString method 
 public String toString(IntByReference b){
   return this.value + " " + b.value;
@@ -75,4 +76,11 @@ public static void swapper(int n0, int n1) {
   System.out.println("After: " + a.toString(b));
   System.out.println();
 }
+```
+
+### Matrix
+String output that stores the formatted matrix. As of now, it is an empty string.
+```
+//create an String output that is changed depending on the values in the matrix
+String output = "";
 ```
