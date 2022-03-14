@@ -46,3 +46,33 @@ Recursion used to rerun the menu after program is executed. Allows user to enter
 //recursion to reprint menu after action is performed
 main(null);
 ```
+### IntByReference
+Uses if statment to check whether the first number is smaller than the second number. If so, it switches the two using a temp value
+```
+//swapToLowHighOrder method - Switches values so they are in low to high order
+public void swapToLowHighOrder (IntByReference b) {
+  if (this.value > b.value){
+    int temp = b.value;
+    b.value = this.value;
+    this.value = temp;
+  }
+}
+```
+Override toString method to print out the first and second ints in the correct format
+//Overriding existing toString method 
+public String toString(IntByReference b){
+  return this.value + " " + b.value;
+}
+```
+swapper calls the toString method in its print statments to print out the correct output in the correct format
+```
+// static method that enables me to see numbers swapped by reference (before, after)
+public static void swapper(int n0, int n1) {
+  IntByReference a = new IntByReference(n0);
+  IntByReference b = new IntByReference(n1);
+  System.out.println("Before: "+ a.toString(b));
+  a.swapToLowHighOrder(b);  // conditionally build swap method to change values of a, b
+  System.out.println("After: " + a.toString(b));
+  System.out.println();
+}
+```
