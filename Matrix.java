@@ -11,8 +11,8 @@ public class Matrix{
   // Hack: create toString method using nested for loops to format output of a matrix
   public String toString(){
     String output = "";
-    for (int row = 0; row < matrix.length(); row++){
-      for (int column = 0; column < matrix[row].length(); column++){
+    for (int row = 0; row < matrix.length; row++){
+      for (int column = 0; column < matrix[row].length; column++){
         if (matrix[row][column] == -1){
           output += " ";
         }
