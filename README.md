@@ -84,3 +84,32 @@ String output that stores the formatted matrix. As of now, it is an empty string
 //create an String output that is changed depending on the values in the matrix
 String output = "";
 ```
+Using nested loops to iterate throught he 2D array. Fomratting based on the values. If the value is a -1, the if statment sets that spot in output as a space. Otherwise, the number is added to output. After each row, a break is used to create a new row in output. At the end, the final output value is returned by the toString
+```
+//nested for loops to interate through the 2D array and format. If there is a -1, it is formatted as a space
+for (int row = 0; row < matrix.length; row++){
+  for (int column = 0; column < matrix[row].length; column++){
+    if (matrix[row][column] == -1){
+      output += " ";
+    }
+    else {
+      output += matrix[row][column];
+    }
+  }
+    //add break after each row
+    output += "\n";
+}
+//add space after entire matrix for easier readability
+output += "\n";
+return output;
+ ```
+ The toString method is called from the main method. Tests whether the method performs the correct action on the keypad and numbers matrices
+ ```
+Matrix m0 = new Matrix(keypad());
+System.out.println("Keypad:");
+System.out.println(m0.toString());
+
+Matrix m1 = new Matrix(numbers());
+System.out.println("Numbers Systems:");
+System.out.println(m1.toString());
+```
