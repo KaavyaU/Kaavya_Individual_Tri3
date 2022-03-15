@@ -50,7 +50,6 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
 - Are the basis for understanding Queues and Stacks
 - Is a dependency for Queues and Stacks
    - A queue has a linked list that stores the head and tail. The linked list is changed based on the dequeueing and enqueuing of the Queue
-   - 
 
 ### Queue
 - Head: First item in the queue; Tail: Last item in the queue
