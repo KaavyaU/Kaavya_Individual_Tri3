@@ -69,7 +69,7 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
 
 ### Challenges Plans
 - Must Use:
-    - Generic T --> Is able to handle many types of data types. Enables something to be applicable to any types of objects. Used in the class declaraation
+    - Generic T --> Is able to handle many types of data types. Enables something to be applicable to any types of objects. Used in the class declaration. Helpful b/c don't have to recast it afterwards. Generic T handles all of that.
     ```
     public class LinkedList <T> {
     }
