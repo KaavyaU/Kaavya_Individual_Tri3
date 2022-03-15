@@ -43,6 +43,21 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
         OPERATORS.put("-", 4);
     }
 ```
+### Challenges Plan
+- Menu:
+    - Use HashMap to store class data
+    - Use try-catch to catch any exceptions to user input
+    - Recursion to reprint the menu
+    - Need to figure out a way to get input from User. Maybe collaborate w/ group members to see if they have any ideas
+- Int By Reference: 
+    - If-statment to check order of numbers
+    - Override toString in order to format correctly
+- Matrix:
+    -  Nested for loops to iterate through 2D Array
+    -  if/else statments to check whether a space of a value should be added to the string
+    -  Try to return output as a single string, rather than having a sepreate string printed for each line in the matrix
+    -  Find a way to add new lines within a single string
+
 ## Tech Talk 1
 ### What are Linked Lists?
 - A way of keeping / managing Objects
