@@ -43,3 +43,37 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
         OPERATORS.put("-", 4);
     }
 ```
+## Tech Talk 1
+### What are Linked Lists?
+- A way of keeping / managing Objects
+- Each object has data and a next pointer
+- Are the basis for understanding Queues and Stacks
+- Is a dependency for Queues and Stacks
+   - A queue has a linked list that stores the head and tail. The linked list is changed based on the dequeueing and enqueuing of the Queue
+   - 
+
+### Queue
+- Head: First item in the queue; Tail: Last item in the queue
+- Enqueue: Add to a queue
+    - Head stays constant, tail is changing
+- Dequeue: Remove form queue
+    - Tail stays constant, head is changing
+- First in, first out
+
+### Stack
+- Only going to work with the head
+- Push: Add values - become the head
+- Pop: remove values
+- Last in, first out
+- Stacks work in a reverse order to Queues
+
+### Challenges Plans
+- Must Use:
+    - Generic T --> Is able to handle many types of data types. Enables something to be applicable to any types of objects. Used in the class declaraation
+    ```
+    public class LinkedList <T> {
+    }
+    ```
+    - Iterable Interface --> Defining a way to iterate through a data structure (ex: enhannced for loop to iterate through an array)
+- Add LinkedList Code to Repl so that the Queue and Stack have the necessary dependency
+- Make tester methods to test the code
