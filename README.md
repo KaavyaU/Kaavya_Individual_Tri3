@@ -4,9 +4,10 @@
 [Kaavya Individual Repl](https://replit.com/@KaavyaUppala/KaavyaIndividualTri3#Main.java)
 
 ## Review Tickets
+
 | Week # | Review Ticket Link |
 | ---   | ---    |
-| 0 | [TT0 Individual](https://github.com/dsblack0/stickers_for_charity/issues/9)<br>[Team Work](https://github.com/dsblack0/stickers_for_charity/issues/3 |
+| 0 | [TT0 Individual](https://github.com/dsblack0/stickers_for_charity/issues/9)<br>[Team Work](https://github.com/dsblack0/stickers_for_charity/issues/3) |
 | 1 | [Team Work](https://github.com/dsblack0/stickers_for_charity/issues/21) |
 
 ## Data Structures Challenges 1-3 (Tech Talk 0)
