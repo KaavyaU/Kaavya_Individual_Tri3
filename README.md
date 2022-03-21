@@ -120,3 +120,118 @@ Matrix m1 = new Matrix(numbers());
 System.out.println("Numbers Systems:");
 System.out.println(m1.toString());
 ```
+## TT1 Challenges
+### Queue
+Changed code in QueueTester to iterate through Array and add each value as its own array into add(). This allows addList() and add() function to stay the same and set new value to tail
+```
+Object[] words = new String[] { "seven", "slimy", "snakes", "sallying", "slowly", "slithered", "southward"};
+QueueManager qWords = new QueueManager("Words");
+//Iterates through the array and enques each value in array as new data to queue
+  for (Object word : words){
+    Object[] singleWord = new Object[] {word};
+    qWords.addList(singleWord);
+    System.out.println ("Enqueued data: " + word);
+    qWords.printQueue();
+  }
+```
+Defined deltete() in Queue. Doesn't take in value b/c only has to remove and change head, not working with data. Similar concept to add() in funcitonality. Sets new head and removes old head.
+```
+//Doesn't need to take in data, because always removes the first value b/c it is the head. Returns the head value to indicate which one to delete
+public T delete() {
+  T data = null;
+  if (head == null)  // initial condition
+    this.tail = this.head = head;
+  else {  // nodes in queue
+    data = head.getData();
+    head = head.getNext(); // current head points to new head
+  }
+  return data;
+}
+```
+removeList() that calls the delete() on the new Array
+```
+// remove a list of objects to queue
+public void removeList(T[]... seriesOfObjects) {
+  for (T[] objects: seriesOfObjects)
+    for (T data : objects) {
+      this.queue.delete();
+      this.count--;
+    }
+  }
+```
+Calling the printQueue() while iterating through Array again in QueueTester. Reverses process of add()
+```
+//Same concept, but dequeing from head
+  for (Object word : words){
+    Object[] singleWord = new Object[] {word};
+    qWords.removeList(singleWord);
+    System.out.println ("Dequeued data: " + word);
+    qWords.printQueue();
+  }
+```
+Editing printQueue() to reformat print statments.
+```
+public void printQueue() {
+  System.out.print(this.name + " count: " + count + ", data: ");
+    System.out.print(data + " ");
+    System.out.println();
+  }
+```
+### MergeQueue
+Creating QueueIterator objects iterator1 and iterator2 to gain acces to hasNext() and next()
+```
+//creates QueueIterator objects to have access to hasNext() and next()
+QueueIterator iterator1 = (QueueIterator)qNums1.queue.iterator();
+QueueIterator iterator2 = (QueueIterator)qNums2.queue.iterator();
+```
+Comparing the values in each queue as long as values are still present in both queues (not null). Using if-else statments, checking order of values and iterating to next value if current value is set as new head to Queue 3
+```
+//comparing both Queues as long as there are elements in both queues.
+while (iterator1.hasNext() && iterator2.hasNext()) {
+  if ((Integer)iterator1.getData() < (Integer)iterator2.getData()){
+    mergeQueue.queue.add(iterator1.getData());
+    iterator1.next();
+  }
+  else{
+    mergeQueue.queue.add(iterator2.getData());
+    iterator2.next();
+  }
+}
+```
+Iterating through the remaining values in the leftover array if one array is completely used up. Done through use of if-else statments.
+```
+// In all values in a queue are already ordered, continues ordering values in unfinished queue
+if(qNums1.queue.getHead() == null){
+  while (iterator2.hasNext()){
+    mergeQueue.queue.add(iterator2.getData());
+    iterator2.next();
+  }
+}
+else {
+  while (iterator1.hasNext()){
+    mergeQueue.queue.add(iterator1.getData());
+    iterator1.next();
+  }
+}
+```
+The getData() function defined in Queue to return data as type T. This is necessary for comparison in if-else statements of MergeList()
+```
+//created new getData() to return data as type T
+public T getData(){
+  T data = current.getData();
+  return data;
+}
+```
+Tester Method for MergeQueue. Passes in two QueueManagers to mergeList(), which outputs a Queue which is then printed out.
+```
+// Create 2 seperate iterable Queues of Integers
+Object[] nums1 = new Integer[] { 1, 4, 5, 8 };
+Object[] nums2 = new Integer[] { 2, 3, 6, 7 };
+QueueManager qNums1 = new QueueManager("Queue 1", nums1);
+QueueManager qNums2 = new QueueManager("Queue 2", nums2);
+qNums1.printQueue();
+qNums2.printQueue();
+MergeQueue mergeQueue = new MergeQueue();
+mergeQueue.mergeList(qNums1, qNums2);
+mergeQueue.printQueue();
+```
