@@ -27,6 +27,7 @@ public class Queue<T> implements Iterable<T> {
     }
   }
 
+  //Doesn't need to take in data, because always removes the first value b/c it is the head. Returns the head value to indicate which one to delete
   public T delete() {
     T data = null;
     if (head == null)  // initial condition
@@ -89,6 +90,7 @@ class QueueIterator<T> implements Iterator<T> {
     return current != null;
   }
 
+  //created new getData() to return data as type T
   public T getData(){
     T data = current.getData();
     return data;
@@ -166,8 +168,10 @@ class MergeQueue {
   QueueManager mergeQueue = new QueueManager("Queue 3");
   
   public QueueManager mergeList(QueueManager qNums1, QueueManager qNums2 ){
+    //creates QueueIterator objects to have access to hasNext() and next()
     QueueIterator iterator1 = (QueueIterator)qNums1.queue.iterator();
     QueueIterator iterator2 = (QueueIterator)qNums2.queue.iterator();
+    //comparing both Queues as long as there are elements in both queues.
     while (iterator1.hasNext() && iterator2.hasNext()) {
       if ((Integer)iterator1.getData() < (Integer)iterator2.getData()){
         mergeQueue.queue.add(iterator1.getData());
@@ -178,6 +182,7 @@ class MergeQueue {
         iterator2.next();
       }
     }
+    // In all values in a queue are already ordered, continues ordering values in unfinished queue
     if(qNums1.queue.getHead() == null){
       while (iterator2.hasNext()){
         mergeQueue.queue.add(iterator2.getData());
@@ -207,12 +212,14 @@ class QueueTester {
     // Create iterable Queue of Words
     Object[] words = new String[] { "seven", "slimy", "snakes", "sallying", "slowly", "slithered", "southward"};
     QueueManager qWords = new QueueManager("Words");
+    //Iterates through the array and enques each value in array as new data to queue
     for (Object word : words){
       Object[] singleWord = new Object[] {word};
       qWords.addList(singleWord);
       System.out.println ("Enqueued data: " + word);
       qWords.printQueue();
     }
+    //Same concept, but dequeing from head
     for (Object word : words){
       Object[] singleWord = new Object[] {word};
       qWords.removeList(singleWord);
