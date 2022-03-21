@@ -3,6 +3,10 @@
 ## Replit Link
 [Kaavya Individual Repl](https://replit.com/@KaavyaUppala/KaavyaIndividualTri3#Main.java)
 
+## Table of Contents
+* TOC
+{:toc}
+
 ## Review Tickets
 
 | Week # | Review Ticket Link |
