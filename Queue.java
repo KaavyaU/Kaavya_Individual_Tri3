@@ -27,6 +27,17 @@ public class Queue<T> implements Iterable<T> {
     }
   }
 
+  public T delete() {
+    T data = null;
+    if (head == null)  // initial condition
+      this.tail = this.head = head;
+    else {  // nodes in queue
+      data = head.getData();
+      head = head.getNext(); // current head points to new head
+    }
+    return data;
+  }
+
   /**
     *  Returns the head object.
     *
@@ -43,6 +54,10 @@ public class Queue<T> implements Iterable<T> {
     */
   public LinkedList<T> getTail() {
     return this.tail;
+  }
+
+  public T getData() {
+    return head.getData();
   }
 
   /**
@@ -74,6 +89,11 @@ class QueueIterator<T> implements Iterator<T> {
     return current != null;
   }
 
+  public T getData(){
+    T data = current.getData();
+    return data;
+  }
+
   // next returns data object and advances to next position in queue
   public T next() {
     T data = current.getData();
@@ -95,7 +115,7 @@ class QueueManager<T> {
 
   /**
     *  Queue constructor
-    *  Title with empty queue
+    *  Title with empty queue. No data passed in
     */
   public QueueManager(String name) {
     this.name = name;
@@ -121,15 +141,60 @@ class QueueManager<T> {
       }
     }
 
+  // remove a list of objects to queue
+  public void removeList(T[]... seriesOfObjects) {
+    for (T[] objects: seriesOfObjects)
+      for (T data : objects) {
+        this.queue.delete();
+        this.count--;
+      }
+    }
+
     /**
      * Print any array objects from queue
      */
     public void printQueue() {
-      System.out.println(this.name + " count: " + count);
-      System.out.print(this.name + " data: ");
+      System.out.print(this.name + " count: " + count + ", data: ");
       for (T data : queue)
         System.out.print(data + " ");
       System.out.println();
+    }
+}
+
+class MergeQueue {
+
+  QueueManager mergeQueue = new QueueManager("Queue 3");
+  
+  public QueueManager mergeList(QueueManager qNums1, QueueManager qNums2 ){
+    QueueIterator iterator1 = (QueueIterator)qNums1.queue.iterator();
+    QueueIterator iterator2 = (QueueIterator)qNums2.queue.iterator();
+    while (iterator1.hasNext() && iterator2.hasNext()) {
+      if ((Integer)iterator1.getData() < (Integer)iterator2.getData()){
+        mergeQueue.queue.add(iterator1.getData());
+        iterator1.next();
+      }
+      else{
+        mergeQueue.queue.add(iterator2.getData());
+        iterator2.next();
+      }
+    }
+    if(qNums1.queue.getHead() == null){
+      while (iterator2.hasNext()){
+        mergeQueue.queue.add(iterator2.getData());
+        iterator2.next();
+      }
+    }
+    else {
+      while (iterator1.hasNext()){
+        mergeQueue.queue.add(iterator1.getData());
+        iterator1.next();
+      }
+    }
+    return mergeQueue;
+  }
+
+  public void printQueue() {
+      mergeQueue.printQueue();
     }
 }
 
@@ -141,12 +206,31 @@ class QueueTester {
   public static void main(String[] args){
     // Create iterable Queue of Words
     Object[] words = new String[] { "seven", "slimy", "snakes", "sallying", "slowly", "slithered", "southward"};
-    QueueManager qWords = new QueueManager("Words", words);
-    qWords.printQueue();
+    QueueManager qWords = new QueueManager("Words");
+    for (Object word : words){
+      Object[] singleWord = new Object[] {word};
+      qWords.addList(singleWord);
+      System.out.println ("Enqueued data: " + word);
+      qWords.printQueue();
+    }
+    for (Object word : words){
+      Object[] singleWord = new Object[] {word};
+      qWords.removeList(singleWord);
+      System.out.println ("Dequeued data: " + word);
+      qWords.printQueue();
+    }
 
-    // Create iterable Queue of Integers
-    Object[] numbers = new Integer[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    QueueManager qNums = new QueueManager("Integers", numbers);
-    qNums.printQueue();
+    System.out.println();
+    
+    // Create 2 seperate iterable Queues of Integers
+    Object[] nums1 = new Integer[] { 1, 4, 5, 8 };
+    Object[] nums2 = new Integer[] { 2, 3, 6, 7 };
+    QueueManager qNums1 = new QueueManager("Queue 1", nums1);
+    QueueManager qNums2 = new QueueManager("Queue 2", nums2);
+    qNums1.printQueue();
+    qNums2.printQueue();
+    MergeQueue mergeQueue = new MergeQueue();
+    mergeQueue.mergeList(qNums1, qNums2);
+    mergeQueue.printQueue();
   }
 }
