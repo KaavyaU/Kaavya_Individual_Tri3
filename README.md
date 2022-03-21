@@ -120,3 +120,49 @@ Matrix m1 = new Matrix(numbers());
 System.out.println("Numbers Systems:");
 System.out.println(m1.toString());
 ```
+## TT1 Challenges
+### Queue
+Changed code in QueueTester to iterate through Array and add each value as its own array into add(). This allows addList() and add() function to stay the same and set new value to tail
+```
+Object[] words = new String[] { "seven", "slimy", "snakes", "sallying", "slowly", "slithered", "southward"};
+QueueManager qWords = new QueueManager("Words");
+//Iterates through the array and enques each value in array as new data to queue
+  for (Object word : words){
+    Object[] singleWord = new Object[] {word};
+    qWords.addList(singleWord);
+    System.out.println ("Enqueued data: " + word);
+    qWords.printQueue();
+  }
+```
+Defined deltete() in Queue. Doesn't take in value b/c only has to remove and change head, not working with data. Similar concept to add() in funcitonality. Sets new head and removes old head.
+```
+//Doesn't need to take in data, because always removes the first value b/c it is the head. Returns the head value to indicate which one to delete
+public T delete() {
+  T data = null;
+  if (head == null)  // initial condition
+    this.tail = this.head = head;
+  else {  // nodes in queue
+    data = head.getData();
+    head = head.getNext(); // current head points to new head
+  }
+  return data;
+}
+```
+Calling the printQueue() while iterating through Array again in QueueTester. Reverses process of add()
+```
+//Same concept, but dequeing from head
+  for (Object word : words){
+    Object[] singleWord = new Object[] {word};
+    qWords.removeList(singleWord);
+    System.out.println ("Dequeued data: " + word);
+    qWords.printQueue();
+  }
+```
+Editing printQueue() to reformat print statments.
+```
+public void printQueue() {
+  System.out.print(this.name + " count: " + count + ", data: ");
+    System.out.print(data + " ");
+    System.out.println();
+  }
+```
