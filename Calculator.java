@@ -116,6 +116,7 @@ public class Calculator{
         case "*":
         case "/":
         case "%":
+        case "^":
           // While stack
           // not empty AND stack top element
           // and is an operator
@@ -139,28 +140,93 @@ public class Calculator{
     }
   }
 
+  // Takes RPN and produces a final result
+  private void rpnToResult(){
+    // Stack used to hold calculation while process RPN
+    Stack calculation = new Stack();
+
+    // for loop to process RPN
+    for (String token : reverse_polish){
+      // If the token is a number
+      if (!isOperator(token)){
+        // Push number to stack
+        Double num = Double.parseDouble(token);
+        calculation.push(num);
+      }
+      // else
+      else {
+        // Pop the two top entries
+        Double token1 = (Double)calculation.pop();
+        Double token2 = (Double)calculation.pop();
+        Double output = 0.0;
+        // Based off of Token operator calculate result
+        if (token.equals("^")){
+          output = Math.pow(token2, token1);
+        }
+        if (token.equals("%")){
+          output = token2 % token1;
+        }
+        if (token.equals("*")){
+          output = token2 * token1;
+        }
+        if (token.equals("/")){
+          output = token2 / token1;
+        }
+        if (token.equals("-")){
+          output = token2 - token1;
+        }
+        if (token.equals("+")){
+          output = token2 + token1;
+        }
+        // Push result back onto the stack
+        calculation.push(output);
+      }
+    }
+    // Pop final result and set as final result for expression
+    result = (Double)calculation.pop();
+  }
+
   // Print the expression, terms, and result
   public String toString() {
     return ("Original expression: " + this.expression + "\n" +
                 "Tokenized expression: " + this.tokens.toString() + "\n" +
                 "Reverse Polish Notation: " +this.reverse_polish.toString() + "\n" +
-                "Final result: " + String.format("%.2f", this.result));
+                "Final result: " + String.format("%.2f", this.result) + "\n" + "\n");
+
   }
 
   public static void main (String [] args){
-     Calculator simpleMath = new Calculator("100 + 200  * 3");
-     System.out.println("Simple Math\n" + simpleMath);
+    Calculator simpleMath = new Calculator("100 + 200  * 3");
+    System.out.println("Simple Math\n" + simpleMath);
 
-     Calculator parenthesisMath = new Calculator("(100 + 200)  * 3");
-     System.out.println("Parenthesis Math\n" + parenthesisMath);
+    Calculator parenthesisMath = new Calculator("(100 + 200)  * 3");
+    System.out.println("Parenthesis Math\n" + parenthesisMath);
 
-     Calculator allMath = new Calculator("200 % 300 + 5 + 300 / 200 + 1 * 100");
-     System.out.println("All Math\n" + allMath);
+    Calculator fractionMath = new Calculator("100.2 - 99.3");
+    System.out.println("Fraction Math\n" + fractionMath);
 
-     Calculator allMath2 = new Calculator("200 % (300 + 5 + 300) / 200 + 1 * 100");
-     System.out.println("All Math2\n" + allMath2);
+    Calculator moduloMath = new Calculator("300 % 200");
+    System.out.println("Modulo Math\n" + moduloMath); 
 
-      Calculator powerMath = new Calculator("2 ^ 3 * 4");
-      System.out.println("Power Math\n" + powerMath);
+    Calculator divisionMath = new Calculator("300 / 200");
+    System.out.println("Division Math\n" + divisionMath); 
+
+    Calculator multiplicationMath = new Calculator("300 * 200");
+    System.out.println("Multiplication Math\n" + multiplicationMath);
+    
+    Calculator allMath = new Calculator("200 % 300 + 5 + 300 / 200 + 1 * 100");
+    System.out.println("All Math\n" + allMath);
+
+    Calculator allMath2 = new Calculator("200 % (300 + 5 + 300) / 200 + 1 * 100");
+    System.out.println("All Math2\n" + allMath2);
+
+    Calculator powerMath = new Calculator("2 ^ 3 * 4");
+    System.out.println("Power Math\n" + powerMath);
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter custom expression to calculate: ");
+    String original = sc.nextLine();
+    Calculator input = new Calculator(original);
+    System.out.println("Result: " + input);
   }
 }
