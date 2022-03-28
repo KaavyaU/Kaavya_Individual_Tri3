@@ -258,6 +258,8 @@ if (!isOperator(token)){
   calculation.push(num);
 }
 ```
+Pop the first two numbers of the stack and cast to double. Then define an output variable. Use series of if statments to calculate ouput depending on the Operator value. THe final output value is pushed onto the stack. This is within a for loop, so will continue this until output is the final result of the expression. The final output value will be pushed into the stack and the for loop will terminate
+```
 else {
   // Pop the two top entries
   Double token1 = (Double)calculation.pop();
@@ -270,20 +272,62 @@ else {
   if (token.equals("%")){
     output = token2 % token1;
   }
-  if (token.equals("")){
+  if (token.equals("*")){
     output = token2 * token1;
   }
-        if (token.equals("/")){
-          output = token2 / token1;
-        }
-        if (token.equals("-")){
-          output = token2 - token1;
-        }
-        if (token.equals("+")){
-          output = token2 + token1;
-        }
-        // Push result back onto the stack
-        calculation.push(output);
-      }
+  if (token.equals("/")){
+    output = token2 / token1;
+  }
+  if (token.equals("-")){
+    output = token2 - token1;
+  }
+  if (token.equals("+")){
+    output = token2 + token1;
+  }
+  // Push result back onto the stack
+  calculation.push(output);
+}
+```
+Once the for loop is terminated, the output value is the only on in the Stack, so it is popped and set as result. 
+```
+// Pop final result and set as final result for expression
+result = (Double)calculation.pop();
+```
+Defines test cases in mai method. The main method is called by Menu in order to run method. Scanner used to allow user input of expression and returns output to user. 
+```
+public static void main (String [] args){
+    Calculator simpleMath = new Calculator("100 + 200  * 3");
+    System.out.println("Simple Math\n" + simpleMath);
 
+    Calculator parenthesisMath = new Calculator("(100 + 200)  * 3");
+    System.out.println("Parenthesis Math\n" + parenthesisMath);
+
+    Calculator fractionMath = new Calculator("100.2 - 99.3");
+    System.out.println("Fraction Math\n" + fractionMath);
+
+    Calculator moduloMath = new Calculator("300 % 200");
+    System.out.println("Modulo Math\n" + moduloMath); 
+
+    Calculator divisionMath = new Calculator("300 / 200");
+    System.out.println("Division Math\n" + divisionMath); 
+
+    Calculator multiplicationMath = new Calculator("300 * 200");
+    System.out.println("Multiplication Math\n" + multiplicationMath);
+    
+    Calculator allMath = new Calculator("200 % 300 + 5 + 300 / 200 + 1 * 100");
+    System.out.println("All Math\n" + allMath);
+
+    Calculator allMath2 = new Calculator("200 % (300 + 5 + 300) / 200 + 1 * 100");
+    System.out.println("All Math2\n" + allMath2);
+
+    Calculator powerMath = new Calculator("2 ^ 3 * 4");
+    System.out.println("Power Math\n" + powerMath);
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter custom expression to calculate: ");
+    String original = sc.nextLine();
+    Calculator input = new Calculator(original);
+    System.out.println("Result: " + input);
+  }
+}
 ```
