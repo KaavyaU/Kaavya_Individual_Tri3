@@ -72,7 +72,6 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
  
 ![image](https://user-images.githubusercontent.com/72475036/158444247-5040561b-5c23-42c5-89b0-bc733cba5a1b.png)
 
-
 ### Queue
 - Head: First item in the queue; Tail: Last item in the queue
 - Enqueue: Add to a queue
@@ -98,3 +97,8 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
     - Iterable Interface --> Defining a way to iterate through a data structure (ex: enhannced for loop to iterate through an array)
 - Add LinkedList Code to Repl so that the Queue and Stack have the necessary dependency
 - Make tester methods to test the code
+
+## Tech Talk 2
+
+## Tech Talk 3
+
