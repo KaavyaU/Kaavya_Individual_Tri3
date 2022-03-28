@@ -239,3 +239,51 @@ MergeQueue mergeQueue = new MergeQueue();
 mergeQueue.mergeList(qNums1, qNums2);
 mergeQueue.printQueue();
 ```
+
+## TT2 Challenges
+### Calculator
+Added power operator to OPERATORS HashMap. Assigned to highest order of presendence (lowest value)
+```
+OPERATORS.put ("^", 2);
+```
+Added power operator case to tokenToReversePolishNotation(). 
+```
+case "^":
+```
+If the token is not an Operator (a number), it is pushed into the stack. In order to get String to Double, Double.parseDouble(token) is used
+```
+if (!isOperator(token)){
+  // Push number to stack
+  Double num = Double.parseDouble(token);
+  calculation.push(num);
+}
+```
+else {
+  // Pop the two top entries
+  Double token1 = (Double)calculation.pop();
+  Double token2 = (Double)calculation.pop();
+  Double output = 0.0;
+  // Based off of Token operator calculate result
+  if (token.equals("^")){
+    output = Math.pow(token2, token1);
+  }
+  if (token.equals("%")){
+    output = token2 % token1;
+  }
+  if (token.equals("")){
+    output = token2 * token1;
+  }
+        if (token.equals("/")){
+          output = token2 / token1;
+        }
+        if (token.equals("-")){
+          output = token2 - token1;
+        }
+        if (token.equals("+")){
+          output = token2 + token1;
+        }
+        // Push result back onto the stack
+        calculation.push(output);
+      }
+
+```
