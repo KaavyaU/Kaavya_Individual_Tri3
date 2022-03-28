@@ -2,6 +2,10 @@
 
 # Tech Talk Notes
 
+## Table of Contents
+* TOC
+{:toc}
+
 ## Tech Talk 0
 ### Data Structures
 - Algorithms interact with data structures
