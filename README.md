@@ -13,6 +13,7 @@
 | ---   | ---    |
 | 0 | [TT0 Individual](https://github.com/dsblack0/stickers_for_charity/issues/9)<br>[Team Work](https://github.com/dsblack0/stickers_for_charity/issues/3) |
 | 1 | [TT1 Individual](https://github.com/dsblack0/stickers_for_charity/issues/24)<br>[Team Work](https://github.com/dsblack0/stickers_for_charity/issues/21) |
+| 2 | [TT2 Individual + Team Grading](https://github.com/dsblack0/stickers_for_charity/issues/33) |
 
 ## Data Structures Challenges 1-3 (Tech Talk 0)
 ### Menu
@@ -293,7 +294,7 @@ Once the for loop is terminated, the output value is the only on in the Stack, s
 // Pop final result and set as final result for expression
 result = (Double)calculation.pop();
 ```
-Defines test cases in mai method. The main method is called by Menu in order to run method. Scanner used to allow user input of expression and returns output to user 
+Defines test cases in main method. The main method is called by Menu in order to run method. Scanner used to allow user input of expression and returns output to user 
 ```
 public static void main (String [] args){
     Calculator simpleMath = new Calculator("100 + 200  * 3");

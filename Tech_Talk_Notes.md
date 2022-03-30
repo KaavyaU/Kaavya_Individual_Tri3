@@ -99,6 +99,28 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
 - Make tester methods to test the code
 
 ## Tech Talk 2
+### Tokenizaiton
+- Breaks up a String input into individual tokens, based on where the spaces and other seperators are
+- These tokens are each placed into an ArrayList, so it's an ArrayList of smaller Strings
+
+### Reverse Polish Notation
+- Takes the tokenized ArrayList and reorders it so that it's follows the order of operations
+- Iterates through the Tokenized ArrayList and pushes to and from stacks accordingly, based on whether they are numbers or operators. Is ordered so that there are 2 number terms and a operator that follows. The operators go in order of highest to lowest precendence
+- RPN needs a way to determine the precedence of its Operators, so using a HashMap and assigning ints to represent presendence orders is helpful. Those with the same order of precendence will have the same int value for the key-value pairs.
+
+### RPN to Answer
+- Needs to calculate the output using the numbers and operators as ordered by the RPN
+- Iterate through the ArrayList and perform functions in order to result in final output. Involves pushing and popping elements to and from stack.
+
+### Challenges Plan
+- Define a stack that will have values added and removed from it (will be a stack of doubles)
+- Put all the code within a for loop so that it can be iterated until there are no more tokens left
+	- Have a if statement that checks for whether the first token is an operator or not. If not an operator, then it must be a number, so cast to a double and push to Stack. Because of this, the ArrayList will no longer hold any numbers, only operators in order of precedence
+	- Have an else statmement that handles the instance when the token is an operator. Pop the first two elements off the stack and cast the tokens to doubles. Then make a double for the result of the calculations
+		- Have if statments that perform the calculation of the popped numbers based on the operator. Remember to do the second number, operator, then first number, because Stacks are LIFO (Last in First Out), so the 2nd number popped off was actually pushed in first
+		- Store the result of the calculation in the result value and push that value back into the stack, so it can be used with the next operator
+- The for loop should continue until there is only 1 value left, that is put in the Stack. This final value in the Stack is the final output
+- Pop the value off the Stack and set result equal to it
 
 ## Tech Talk 3
 
