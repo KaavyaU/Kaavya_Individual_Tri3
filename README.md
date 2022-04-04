@@ -332,3 +332,10 @@ public static void main (String [] args){
   }
 }
 ```
+## TT3 Challenges: Sorts
+### Selection Sort
+### Insertion Sort
+### Merge Sort
+### Bubble Sort
+### Main Method
+### Big O Notation
