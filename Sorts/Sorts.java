@@ -35,6 +35,7 @@ public class Sorts {
 
     public ArrayList<Integer> mySort(){
         //nothing in Baseclass
+        //Method has implementations specific to each sort in the subclass
         return data;
     }
 
@@ -60,17 +61,19 @@ public class Sorts {
 
     public static void main(String[] args) {
         int sum=0, time=0, TIMES=12, SIZE=5000;
+
+        //Creates an ArrayList of Sort Objects, each with different subclass constructor
         ArrayList<Sorts> sortsList = new ArrayList<Sorts>();
         sortsList.add(new SelectionSort(SIZE));
         sortsList.add(new InsertionSort(SIZE));
         sortsList.add(new BubbleSort(SIZE));
         sortsList.add(new MergeSort(SIZE));
-        //Duration timeElapsed;
 
         for(int i=0; i< TIMES; i++) {
             System.out.println("-------Round : " + i);;
 
             for (Sorts current : sortsList) {
+                //Recieving analytics for each time all 4 sorts run
                 System.out.println("-- " + current.myName() + " --");
                 current.myInit();
                 System.out.println("Before sort " + current.getData());
@@ -82,7 +85,7 @@ public class Sorts {
                 System.out.println("After sort " + current.getData());
             }
         }
-
+        //Using added up totals to determine average analytics
         for (Sorts current : sortsList) {
             System.out.println("-- " + current.myName() + " --");
             System.out.println("Average time " + current.getTimeElapsed()/TIMES);
