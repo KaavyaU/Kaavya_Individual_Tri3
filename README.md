@@ -14,6 +14,7 @@
 | 0 | [TT0 Individual](https://github.com/dsblack0/stickers_for_charity/issues/9)<br>[Team Work](https://github.com/dsblack0/stickers_for_charity/issues/3) |
 | 1 | [TT1 Individual](https://github.com/dsblack0/stickers_for_charity/issues/24)<br>[Team Work](https://github.com/dsblack0/stickers_for_charity/issues/21) |
 | 2 | [TT2 Individual + Team Grading](https://github.com/dsblack0/stickers_for_charity/issues/33) |
+| 3 | [TT3 Individual](https://github.com/dsblack0/stickers_for_charity/issues/37) |
 
 ## Data Structures Challenges 1-3 (Tech Talk 0)
 ### Menu
@@ -511,3 +512,4 @@ for (Sorts current : sortsList) {
 }
 ```
 ### Big O Notation
+[Link](https://kaavyau.github.io/Kaavya_Individual_Tri3/Tech_Talk_Notes#big-o-notation)
