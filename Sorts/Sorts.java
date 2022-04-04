@@ -59,7 +59,7 @@ public class Sorts {
     public String myName() { return "None"; }
 
     public static void main(String[] args) {
-        int sum=0, time=0, TIMES=12, SIZE=11;
+        int sum=0, time=0, TIMES=12, SIZE=5000;
         ArrayList<Sorts> sortsList = new ArrayList<Sorts>();
         sortsList.add(new SelectionSort(SIZE));
         sortsList.add(new InsertionSort(SIZE));
