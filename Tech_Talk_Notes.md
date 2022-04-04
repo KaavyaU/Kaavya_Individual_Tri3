@@ -123,4 +123,24 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
 - Pop the value off the Stack and set result equal to it
 
 ## Tech Talk 3
+### Big O Notation
+**Selection Sort**: O(n^2)
+- Has a nested for loop. 
+- In worse case scenario, the elements must loop from beginning of the array in the outer loop (n) and for each iteration, do the same in the inside loop (n), so the Big O Notation would be n^2
 
+**Insertion Sort**: O(n^2)
+- Like Selection Sort, it has a nested for loop
+- In the worst case scenario, it must iterate throuh both outside (n) and inside (n), making the Big O Notation n^2
+
+**Merge Sort**: O(nlog(n))
+- log(n) refers to the binary log (base 2). In this case, this refers to how the Array is split into 2 parts
+- It is multiplied by n, becasue the number of times this spliting happens is dependent on the number of terms in the ArrayList
+
+**Bubble Sort**: O(n^2)
+- Iterates through the entire ArrayList (n). Passes through the ArrayList multiple times until no sorts are made (n)
+- In the worst case scenario, swaps will be needed on all elemtns, causing the number of passes to be equal to the number of terms, making a Big O complexity of n^2
+
+### Final Analysis:
+Based on the Big O Notation and data, **Merge Sort is most efficient for large data samples**
+- O(nlog(n)) is much simpler than (n^2), meaning it takes less time in the long run than the other kinds of sorts
+- Furthermore, this is supported by the runtime, with MergeSort having much smaller runtime than the other 3 sorts
