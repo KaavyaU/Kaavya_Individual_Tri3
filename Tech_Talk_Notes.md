@@ -141,6 +141,30 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
 - In the worst case scenario, swaps will be needed on all elemtns, causing the number of passes to be equal to the number of terms, making a Big O complexity of n^2
 
 ### Final Analysis:
-Based on the Big O Notation and data, **Merge Sort is most efficient for large data samples**
+#### Big O Notation
 - O(nlog(n)) is much simpler than (n^2), meaning it takes less time in the long run than the other kinds of sorts
-- Furthermore, this is supported by the runtime, with MergeSort having much smaller runtime than the other 3 sorts
+- ![image](https://user-images.githubusercontent.com/72475036/162483320-8fb2b8ae-ecb4-4b71-ba62-753d052661c4.png)
+- As the number of elements increases, the time it takes for Selection Sort, Insertion Sort, and Bubble Sort increases much faster than the time for Merge Sort
+
+#### Time Analysis
+- Furthermore, this is supported by the runtime, with MergeSort having much smaller runtime than the other 3 sorts. Therefore, MergeSort is more time-efficient than the other types of sorts
+
+Average Times (nano) | Selection | Insertion | Bubble   | Merge
+---------------------|-----------|-----------|----------|--------
+1                    |73711975   |76290241   |673162141 |44975391
+2                    |50551958   |55961716   |455635750 |29819400
+3                    |32031366   |49448708   |375128516 |21487291
+4                    |28733408   |43140758   |344080558 |19156533
+5                    |32698216   |44894375   |380757516 |21663183
+6                    |36692383   |54302816   |420110508 |24733408
+7                    |48484075   |64888908   |491537100 |28818716
+8                    |31897466   |69928875   |380452708 |22488066
+9                    |31241758   |47903816   |357629658 |20075500
+10                   |34316441   |51299991   |393361433 |21910416
+
+- Mostly, MergeSort has much shorter runtimes than the other sorts, consistant with what the Big O Notation predicted about this form of sort
+
+#### Swaps/Comaparisons Analysis
+- Need do add analysis for this
+
+**Merge Sort is most efficient for large data samples**
