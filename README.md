@@ -14,6 +14,7 @@
 | 0 | [TT0 Individual](https://github.com/dsblack0/stickers_for_charity/issues/9)<br>[Team Work](https://github.com/dsblack0/stickers_for_charity/issues/3) |
 | 1 | [TT1 Individual](https://github.com/dsblack0/stickers_for_charity/issues/24)<br>[Team Work](https://github.com/dsblack0/stickers_for_charity/issues/21) |
 | 2 | [TT2 Individual + Team Grading](https://github.com/dsblack0/stickers_for_charity/issues/33) |
+| 3 | [TT3 Individual](https://github.com/dsblack0/stickers_for_charity/issues/37) |
 
 ## Data Structures Challenges 1-3 (Tech Talk 0)
 ### Menu
@@ -334,8 +335,181 @@ public static void main (String [] args){
 ```
 ## TT3 Challenges: Sorts
 ### Selection Sort
+- Uses nested for loops to iterate through the array. For each time the first comparator increments, the second ones goes from index of the first to the end
+- Sets the lower index to lowest, and uses that to perform the swap alorithm after the inside for loop is completed. Basically finds the lowest value after the first comparator and swaps it with the first comparator (if it's less than the first comparator)
+```
+public ArrayList<Integer> mySort(){
+  swaps = 0;
+  //Iterating through the ArrayList and setting lowest to i (first comparator)
+  for (int i=0; i<length; i++){
+    int lowest = i;
+    int j=i+1;
+    //Iterating through the ArrayList starting at j, which is i+1 (second comparator)
+    //While for each increment of i, j iterates through the rest of the ArrayList
+    while (j<length) {
+      //Checks to see if data at index j is less than data at index i (second comparator < first comparator)
+      if (data.get(j) < data.get(lowest)) {
+        //Sets lowest as j, so that index of second comparator will be the index of first comparator
+        lowest = j;
+        swaps++;
+      }
+      j++;
+    }
+    //Swaps the data at index lowest and index i
+    int temp = data.get(lowest);
+    data.set(lowest, data.get(i));
+    data.set(i, temp);
+  }
+  return data;
+}
+```
 ### Insertion Sort
+- Uses while loop inside a for loop to iterate through the ArrayList in a similar way to Selection Sort
+- If the second comparator is greater than the first one, then it stores the value of the second on temporarily, removes the value at index j and adds a value at index i that is equal to temp
+  - Causes the rest of the values to shift over 1 index, while ensuring ArrayList length remains the same
+- If the second value isn't greater, then we want it to compare with the next index value, so j is incremented in the else
+```
+public ArrayList<Integer> mySort(){
+  swaps = 0;
+  //like Selection Sort, iterates with i and j incrementing within for loops
+  for (int i=0; i<length; i++){
+      int j=i+1;
+      while (j<length){
+        //if comparator 1 is greater than comparator 2, will enter if statement
+        if (data.get(i) > data.get(j)){
+          //swaps data and increments swaps
+          int temp = data.get(j);
+          data.remove(j);
+          data.add(i, temp);
+          swaps++;
+        }
+        //if it isn't greater, it increments j, so that different values are being compared
+        else {
+          j++;
+        }
+      }
+    }
+    return data;
+ }
+```
 ### Merge Sort
+mySort() calls method sortRecursive()
+```
+public ArrayList<Integer> mySort(){
+  sortRecursive(0,length-1);
+  return data;
+}
+```
+- Determines the middle and checks to see if the length of the segment is less than 2. If it is, then it performs the swap
+- If the start and end are the same, exits without performing swap
+- If the segment is greater than 2, it means that the ArrayList needs to be broken down more. Uses recursion of sortRecursive twice. 
+  - For the first time, passes in start and middle
+  - For the second time, passes in middle + 1 and end
+  - Uses selecton sort algorithm to perfomrm the swaps. 
+```
+public void sortRecursive(int start, int end){
+  int middle = start + (end-start)/2;
+  
+  if (end == start) return;
+  
+  if ((end-start) < 2) {
+    if (data.get(end) < data.get(start)){
+      int temp = start;
+      start = end;
+      end = temp;
+      swaps++;
+    }
+  }
+  else{
+    //System.out.println("sort from " + start + " to " + middle);
+    sortRecursive(start, middle);
+    //System.out.println("sort from " + (middle+1) + " to " + end);
+    sortRecursive(middle + 1, end);
+    //use Selection Sort logic as the sorted comparison
+    //System.out.println("merge " + start + " to " + end);
+    int len = end-start + 1;
+      for (int i=0; i<len; i++){
+        int lowest = i;
+        int j=i+1;
+        while (j<len) {
+          if (data.get(j) < data.get(lowest)) {
+            lowest = j;
+          }
+        j++;
+      }
+      int temp = data.get(lowest);
+      data.set(lowest, data.get(i));
+      data.set(i, temp);
+      swaps++;
+    }
+    //System.out.println(data);
+  }
+}
+```
 ### Bubble Sort
+- Iterates through the ArrayList while incrementing i and j so they have consecutive indices
+- Checks to see if data at index i is greater than data and index j. If so, uses basic swap logic to switch the values. Then increments swap b/c a swap has been made
+- Checks if any swaps were made. If there were, recursively calls mySort() so that another pass is made
+- If no swaps are made, exits the method and returns data.
+```
+ public ArrayList<Integer> mySort(){
+  swaps = 0;
+  int i = 0;
+  //Iterates through the ArrayList, incrementing i and j so that they are always consecutive indices
+  for (int j = i+1; j<length; i++, j++){
+      //if data at index j is greater than data at index i, enters if statement
+      if (data.get(i) > data.get(j)){
+        //Uses basic swap logic to switch the data values in index i and index j
+        int temp = data.get(j);
+        data.set(j, data.get(i));
+        data.set(i,temp);
+        //Increments swaps
+        swaps++;
+      }
+    }
+    //If no swaps are made, exits if statement. If swaps were made, uses recursion to call mySort again (passes through ArrayList again)
+    if (swaps > 0){
+      this.mySort();
+    }
+  return data;
+}
+```
 ### Main Method
+Defines an ArrayList of 4 Sorts. One of each kind of subclass. This way, each item in the ArrayList will call a different mySort() and perform the respective sort
+```
+//Creates an ArrayList of Sort Objects, each with different subclass constructor
+ArrayList<Sorts> sortsList = new ArrayList<Sorts>();
+sortsList.add(new SelectionSort(SIZE));
+sortsList.add(new InsertionSort(SIZE));
+sortsList.add(new BubbleSort(SIZE));
+sortsList.add(new MergeSort(SIZE));
+``` 
+Using for loops to determine the analytics and printing them out. 
+- The first one determines analytics for each sort, each time (so 12 times total)
+- The second one determines average analytics by adding up the values from each loop. Prints that as well
+```
+for(int i=0; i< TIMES; i++) {
+  System.out.println("-------Round : " + i);;
+
+  for (Sorts current : sortsList) {
+    //Recieving analytics for each time all 4 sorts run
+    System.out.println("-- " + current.myName() + " --");
+    current.myInit();
+    System.out.println("Before sort " + current.getData());
+    Instant start = Instant.now();  // time capture -- start
+    current.mySort();
+    Instant end = Instant.now();    // time capture -- end
+    current.addTimeElapsed(Duration.between(start, end));
+    current.addSwaps(current.swaps);
+    System.out.println("After sort " + current.getData());
+  }
+}
+//Using added up totals to determine average analytics
+for (Sorts current : sortsList) {
+  System.out.println("-- " + current.myName() + " --");
+  System.out.println("Average time " + current.getTimeElapsed()/TIMES);
+  System.out.println("Average swaps " + current.getSwaps()/TIMES);
+}
+```
 ### Big O Notation
+[Link](https://kaavyau.github.io/Kaavya_Individual_Tri3/Tech_Talk_Notes#big-o-notation)
