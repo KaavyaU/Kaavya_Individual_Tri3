@@ -143,7 +143,7 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
 ### Final Analysis:
 #### Big O Notation
 - O(nlog(n)) is much simpler than (n^2), meaning it takes less time in the long run than the other kinds of sorts
-- ![image](https://user-images.githubusercontent.com/72475036/162483320-8fb2b8ae-ecb4-4b71-ba62-753d052661c4.png)
+![image](https://user-images.githubusercontent.com/72475036/162483320-8fb2b8ae-ecb4-4b71-ba62-753d052661c4.png)
 - As the number of elements increases, the time it takes for Selection Sort, Insertion Sort, and Bubble Sort increases much faster than the time for Merge Sort
 
 #### Time Analysis
