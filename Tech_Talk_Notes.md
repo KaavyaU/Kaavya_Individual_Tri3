@@ -181,7 +181,7 @@ Average Swaps | Selection | Insertion | Merge
 10            |35163      |4990       |58744
 
 #### Final Comparison
-- Graphed the values runtime vs. average swaps for each sort. The line with the steepest slops will be the most efficient, b/c it means more sorts are being done in a shorter increment of time
-
+- MergeSort has the most number of swaps, with a smaller runtime. This means that the sorting is happening mroe efficintly.
+- Big O Notation demonstreates that with less data, Insertion, Selection, and Bubble sorts would be more efficient. But with larger data samples (like 5000 elements), Merge Sort would be more efficient
 
 **Merge Sort is most efficient for large data samples**
