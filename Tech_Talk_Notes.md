@@ -165,6 +165,23 @@ Average Times (nano) | Selection | Insertion | Bubble   | Merge
 - Mostly, MergeSort has much shorter runtimes than the other sorts, consistant with what the Big O Notation predicted about this form of sort
 
 #### Swaps/Comaparisons Analysis
-- Need do add analysis for this
+- Merge Sort performs more swaps in a smaller amount of time, meaning it is overall more efficient than the other kinds of sorts
+
+Average Swaps | Selection | Insertion | Merge
+--------------|-----------|-----------|--------
+1             |35244      |4988       |58743
+2             |35074      |4990       |58736
+3             |35233      |4991       |58729
+4             |35343      |4992       |58736
+5             |35434      |4991       |58728
+6             |35393      |4990       |58742
+7             |35288      |4991       |58731
+8             |35173      |4990       |58743
+9             |35440      |4991       |58735
+10            |35163      |4990       |58744
+
+#### Final Comparison
+- Graphed the values runtime vs. average swaps for each sort. The line with the steepest slops will be the most efficient, b/c it means more sorts are being done in a shorter increment of time
+
 
 **Merge Sort is most efficient for large data samples**
