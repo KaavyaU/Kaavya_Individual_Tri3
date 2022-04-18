@@ -31,3 +31,4 @@ Wednesday | Correct MC   | Watch Unit 3: University Faculty Lecture<br>Review [U
 Thursday  | Practice FRQ | Watch Unit 4: University Faculty Lecture<br>Review [Unit 4 Notes](https://docs.google.com/document/d/1RIIQLuQYmd7VfgwVUuagS0k8c6wzEtOcaqYy5M8PtLE/edit#bookmark=id.kup2em8q0y8u)<br>Complete Unit 4 Quizzes
 Friday    | Correct FRQ  | Watch Unit 5: University Faculty Lecture<br>Review [Unit 5 Notes](https://docs.google.com/document/d/1RIIQLuQYmd7VfgwVUuagS0k8c6wzEtOcaqYy5M8PtLE/edit#bookmark=id.jrlsdhqzyh2v)<br>Complete Unit 5 Quizzes
 Weekend   | N/A          | Compile List of trouble spots from the week and review corresponding notes<br>Find additional FRQs and MCs to practice (released AP problems)
+
