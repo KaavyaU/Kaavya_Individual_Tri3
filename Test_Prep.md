@@ -22,6 +22,7 @@ Contains notes from AP Classroom videos + MC Questions & Corrections
 ## Weekly Plans
 
 ### Week 1 (Units 1-5)
+
 Day       | Class        | Individual
 ----------|--------------|------------
 Monday    | Make plans   | Watch Unit 1: University Faculty Lecture<br>Review [Unit 1 Notes](https://docs.google.com/document/d/1RIIQLuQYmd7VfgwVUuagS0k8c6wzEtOcaqYy5M8PtLE/edit#bookmark=id.4j5qsmn6sipx)<br>Complete Unit 1 Quizzes
