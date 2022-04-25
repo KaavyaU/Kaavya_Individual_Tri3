@@ -1,3 +1,8 @@
+import FRQ2015.DiverseArray;
+import FRQ2015.HiddenWord;
+import FRQ2015.Range;
+import FRQ2015.SparseArray;
+
 import java.util.*;
 
 public class Menu {
@@ -32,6 +37,10 @@ public class Menu {
     menu.put(4, new Menu("Reverse Queue w/ Stack", () -> reverseQueue.main(null)));
     menu.put(5, new Menu("Calculator", () -> Calculator.main(null)));
     menu.put(6, new Menu("Sorts", () -> Sorts.Sorts.main(null)));
+    menu.put(7, new Menu("DiverseArray", () -> DiverseArray.main(null)));
+    menu.put(8, new Menu("HiddenWord", () -> HiddenWord.main(null)));
+    menu.put(9, new Menu("SparseArray", () -> SparseArray.main(null)));
+    menu.put(10, new Menu("Range", () -> Range.main(null)));
     
     //Printing the menu by iterating though HashMap menu
     System.out.println("Please select a program to run:");
