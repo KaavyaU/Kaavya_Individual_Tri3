@@ -141,6 +141,47 @@ private final Map<String, Integer> OPERATORS = new HashMap<>();
 - In the worst case scenario, swaps will be needed on all elemtns, causing the number of passes to be equal to the number of terms, making a Big O complexity of n^2
 
 ### Final Analysis:
-Based on the Big O Notation and data, **Merge Sort is most efficient for large data samples**
+#### Big O Notation
 - O(nlog(n)) is much simpler than (n^2), meaning it takes less time in the long run than the other kinds of sorts
-- Furthermore, this is supported by the runtime, with MergeSort having much smaller runtime than the other 3 sorts
+![image](https://user-images.githubusercontent.com/72475036/162483320-8fb2b8ae-ecb4-4b71-ba62-753d052661c4.png)
+- As the number of elements increases, the time it takes for Selection Sort, Insertion Sort, and Bubble Sort increases much faster than the time for Merge Sort
+
+#### Time Analysis
+- Furthermore, this is supported by the runtime, with MergeSort having much smaller runtime than the other 3 sorts. Therefore, MergeSort is more time-efficient than the other types of sorts
+
+Average Times (nano) | Selection | Insertion | Bubble   | Merge
+---------------------|-----------|-----------|----------|--------
+1                    |73711975   |76290241   |673162141 |44975391
+2                    |50551958   |55961716   |455635750 |29819400
+3                    |32031366   |49448708   |375128516 |21487291
+4                    |28733408   |43140758   |344080558 |19156533
+5                    |32698216   |44894375   |380757516 |21663183
+6                    |36692383   |54302816   |420110508 |24733408
+7                    |48484075   |64888908   |491537100 |28818716
+8                    |31897466   |69928875   |380452708 |22488066
+9                    |31241758   |47903816   |357629658 |20075500
+10                   |34316441   |51299991   |393361433 |21910416
+
+- Mostly, MergeSort has much shorter runtimes than the other sorts, consistant with what the Big O Notation predicted about this form of sort
+
+#### Swaps/Comaparisons Analysis
+- Merge Sort performs more swaps in a smaller amount of time, meaning it is overall more efficient than the other kinds of sorts
+
+Average Swaps | Selection | Insertion | Merge
+--------------|-----------|-----------|--------
+1             |35244      |4988       |58743
+2             |35074      |4990       |58736
+3             |35233      |4991       |58729
+4             |35343      |4992       |58736
+5             |35434      |4991       |58728
+6             |35393      |4990       |58742
+7             |35288      |4991       |58731
+8             |35173      |4990       |58743
+9             |35440      |4991       |58735
+10            |35163      |4990       |58744
+
+#### Final Comparison
+- MergeSort has the most number of swaps, with a smaller runtime. This means that the sorting is happening mroe efficintly.
+- Big O Notation demonstreates that with less data, Insertion, Selection, and Bubble sorts would be more efficient. But with larger data samples (like 5000 elements), Merge Sort would be more efficient
+
+**Merge Sort is most efficient for large data samples**
