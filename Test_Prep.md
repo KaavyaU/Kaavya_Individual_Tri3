@@ -66,3 +66,6 @@ Weekend   | N/A          | Compile List of trouble spots from the week and revie
 - [2020 MC Corrections](https://docs.google.com/document/d/1lKgTZCheP5DQr6eGg5GOhTLHsJOgMOnl58e57MxlMrQ/edit?usp=sharing)
 - [2020 FRQ Runtime](https://replit.com/@KaavyaUppala/KaavyaIndividualTri3#Main.java)
 - [Week 2 Review Ticket](https://github.com/dsblack0/stickers_for_charity/issues/49)
+
+### Week 2 FRQ Paper Submission
+[2020FRQ.pdf](https://github.com/KaavyaU/Kaavya_Individual_Tri3/files/8612860/2020FRQ.pdf)
