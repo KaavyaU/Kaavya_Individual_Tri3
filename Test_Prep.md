@@ -51,7 +51,7 @@ Question 3
 Question 4 (didn't finish)
 ![PXL_20220422_142823012](https://user-images.githubusercontent.com/72475036/164735606-3e83e151-24c2-45b3-913f-4a3bc977b74d.jpg)
 
-### Week 1 (Units 1-5)
+### Week 2 (Units 6-10)
 
 Day       | Class        | Individual
 ----------|--------------|------------
