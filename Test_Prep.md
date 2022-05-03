@@ -51,3 +51,18 @@ Question 3
 Question 4 (didn't finish)
 ![PXL_20220422_142823012](https://user-images.githubusercontent.com/72475036/164735606-3e83e151-24c2-45b3-913f-4a3bc977b74d.jpg)
 
+### Week 1 (Units 1-5)
+
+Day       | Class        | Individual
+----------|--------------|------------
+Monday    | Make plans   | Watch Unit 6: AP Daily<br>Review Unit 1 Notes<br>Complete Unit 1 Quizzes
+Tuesday   | Practice MC  | Watch Unit 7: AP Daily<br>Review Unit 2 Notes<br>Complete Unit 2 Quizzes
+Wednesday | Correct MC   | Watch Unit 8: AP Daily<br>Review Unit 3 Notes<br>Complete Unit 3 Quizzes
+Thursday  | Practice FRQ | Watch Unit 9: AP Daily<br>Review Unit 4 Notes<br>Complete Unit 4 Quizzes
+Friday    | Correct FRQ  | Watch Unit 10: AP Daily<br>Review Unit 10 Notes<br>Complete Unit 5 Quizzes
+Weekend   | N/A          | Compile List of trouble spots from the week and review corresponding notes<br>Find additional FRQs and MCs to practice (released AP problems)
+
+### Week 2 Links
+- [2020 MC Corrections](https://docs.google.com/document/d/1lKgTZCheP5DQr6eGg5GOhTLHsJOgMOnl58e57MxlMrQ/edit?usp=sharing)
+- [2020 FRQ Runtime](https://replit.com/@KaavyaUppala/KaavyaIndividualTri3#Main.java)
+- [Week 2 Review Ticket](https://github.com/dsblack0/stickers_for_charity/issues/49)
