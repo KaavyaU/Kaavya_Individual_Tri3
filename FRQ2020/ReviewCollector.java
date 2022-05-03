@@ -21,6 +21,9 @@ public class ReviewCollector {
     }
 
     public int getNumGoodReviews(String prodName){
+        /*
+        Logic is incorrect. Number of goodReviews is 1 less than it should be
+         */
         int goodReviews = 0;
         for (int x = 0; x < productList.size(); x++){
             if (productList.get(x).equals(prodName)){

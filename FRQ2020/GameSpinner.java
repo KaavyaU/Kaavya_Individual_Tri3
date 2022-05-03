@@ -17,6 +17,7 @@ public class GameSpinner {
     }
 
     public int currentRun(){
+        //run length should be stored as a static variable, so that it remains constant over multiple objects
         int length = 0;
         if (result == 0){
             length = 0;
