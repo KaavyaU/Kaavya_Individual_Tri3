@@ -2,6 +2,10 @@ import FRQ2015.DiverseArray;
 import FRQ2015.HiddenWord;
 import FRQ2015.Range;
 import FRQ2015.SparseArray;
+import FRQ2020.GameSpinner;
+import FRQ2020.Hailstone;
+import FRQ2020.ReviewCollector;
+import FRQ2020.Theater;
 
 import java.util.*;
 
@@ -41,6 +45,10 @@ public class Menu {
     menu.put(8, new Menu("HiddenWord", () -> HiddenWord.main(null)));
     menu.put(9, new Menu("SparseArray", () -> SparseArray.main(null)));
     menu.put(10, new Menu("Range", () -> Range.main(null)));
+    menu.put(11, new Menu("Hailstone", () -> Hailstone.main(null)));
+    menu.put(12, new Menu("GameSpinner", () -> GameSpinner.main(null)));
+    menu.put(13, new Menu("ReviewCollector", () -> ReviewCollector.main(null)));
+    menu.put(14, new Menu("Theater", () -> Theater.main(null)));
     
     //Printing the menu by iterating though HashMap menu
     System.out.println("Please select a program to run:");
