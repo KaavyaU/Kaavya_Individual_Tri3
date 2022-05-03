@@ -35,7 +35,13 @@ Thursday  | Practice FRQ | Watch Unit 4: AP Daily<br>Review [Unit 4 Notes](https
 Friday    | Correct FRQ  | Watch Unit 5: AP Daily<br>Review [Unit 5 Notes](https://docs.google.com/document/d/1RIIQLuQYmd7VfgwVUuagS0k8c6wzEtOcaqYy5M8PtLE/edit#bookmark=id.jrlsdhqzyh2v)<br>Complete Unit 5 Quizzes
 Weekend   | N/A          | Compile List of trouble spots from the week and review corresponding notes<br>Find additional FRQs and MCs to practice (released AP problems)
 
-### Practice FRQ #1 (2015)
+### Week 1 Links
+- [2015 MC Corrections](https://docs.google.com/document/d/1jT28AytAn5KImJ13SHB8hOLP28Ea6BeVFarLeRDwJMg/edit?usp=sharing)
+- [2015 FRQ Runtime](https://replit.com/@KaavyaUppala/KaavyaIndividualTri3#Main.java)
+- [Week 1 Individual Review](url)
+- [Week 1 Review Ticket](https://github.com/dsblack0/stickers_for_charity/issues/44)
+
+### Practice FRQ #1 - Initial Code (2015)
 Question 1
 ![PXL_20220422_142719591 MP](https://user-images.githubusercontent.com/72475036/164735403-9ba55cf3-fe99-4d16-ae81-a516d75bd4ba.jpg)
 Question 2 (didn't finish)
@@ -45,3 +51,18 @@ Question 3
 Question 4 (didn't finish)
 ![PXL_20220422_142823012](https://user-images.githubusercontent.com/72475036/164735606-3e83e151-24c2-45b3-913f-4a3bc977b74d.jpg)
 
+### Week 2 (Units 6-10)
+
+Day       | Class        | Individual
+----------|--------------|------------
+Monday    | Make plans   | Watch Unit 6: AP Daily<br>Review Unit 1 Notes<br>Complete Unit 1 Quizzes
+Tuesday   | Practice MC  | Watch Unit 7: AP Daily<br>Review Unit 2 Notes<br>Complete Unit 2 Quizzes
+Wednesday | Correct MC   | Watch Unit 8: AP Daily<br>Review Unit 3 Notes<br>Complete Unit 3 Quizzes
+Thursday  | Practice FRQ | Watch Unit 9: AP Daily<br>Review Unit 4 Notes<br>Complete Unit 4 Quizzes
+Friday    | Correct FRQ  | Watch Unit 10: AP Daily<br>Review Unit 10 Notes<br>Complete Unit 5 Quizzes
+Weekend   | N/A          | Compile List of trouble spots from the week and review corresponding notes<br>Find additional FRQs and MCs to practice (released AP problems)
+
+### Week 2 Links
+- [2020 MC Corrections](https://docs.google.com/document/d/1lKgTZCheP5DQr6eGg5GOhTLHsJOgMOnl58e57MxlMrQ/edit?usp=sharing)
+- [2020 FRQ Runtime](https://replit.com/@KaavyaUppala/KaavyaIndividualTri3#Main.java)
+- [Week 2 Review Ticket](https://github.com/dsblack0/stickers_for_charity/issues/49)
